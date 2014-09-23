@@ -10,14 +10,14 @@ import java.sql.SQLException;
  */
 public class JDBCConnectionPool extends ObjectPool<Connection> {
 
-    private String dsn, usr, pwd;
+    private final String dsn, usr, pwd;
 
     public JDBCConnectionPool(String driver, String dsn, String usr, String pwd) {
         super();
         try {
             Class.forName(driver).newInstance();
-        } catch (Exception e) {
-            e.printStackTrace();
+        } catch (ClassNotFoundException | InstantiationException | IllegalAccessException e) {
+           System.err.println(e);
         }
         this.dsn = dsn;
         this.usr = usr;
@@ -29,7 +29,7 @@ public class JDBCConnectionPool extends ObjectPool<Connection> {
         try {
             return (DriverManager.getConnection(dsn, usr, pwd));
         } catch (SQLException e) {
-            e.printStackTrace();
+            System.err.println(e);
             return (null);
         }
     }
@@ -39,16 +39,16 @@ public class JDBCConnectionPool extends ObjectPool<Connection> {
         try {
             c.close();
         } catch (SQLException e) {
-            e.printStackTrace();
+            System.err.println(e);
         }
     }
 
     @Override
     public boolean validate(Connection o) {
         try {
-            return (!((Connection) o).isClosed());
+            return !o.isClosed();
         } catch (SQLException e) {
-            e.printStackTrace();
+            System.err.println(e);
             return (false);
         }
     }
