@@ -35,9 +35,9 @@ public class JDBCConnectionPool extends ObjectPool<Connection> {
     }
 
     @Override
-    public void expire(Connection o) {
+    public void expire(Connection c) {
         try {
-            ((Connection) o).close();
+            c.close();
         } catch (SQLException e) {
             e.printStackTrace();
         }

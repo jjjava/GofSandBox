@@ -6,6 +6,7 @@
 package nogofsandbox.connection.objectpool;
 
 import java.sql.Connection;
+import java.sql.SQLException;
 
 /**
  *
@@ -13,20 +14,23 @@ import java.sql.Connection;
  */
 public class Client {
 
-    public static void main(String args[]) {
+    public static void main(String args[]) throws SQLException {
     // Do something...
 
         // Create the ConnectionPool:
         JDBCConnectionPool pool = new JDBCConnectionPool(
-                "org.hsqldb.jdbcDriver", "jdbc:hsqldb://localhost/mydb","sa", "secret");
+                "com.ibm.as400.access.AS400JDBCDriver", "jdbc:as400://clm00010","wsadm", "michelin");
 
         // Get a connection:
         Connection con = pool.checkOut();
+        Connection con2 = pool.checkOut();
         // Use the connection
+        System.out.println(con2.getCatalog());
 
 
         // Return the connection:
         pool.checkIn(con);
+        
 
     }
 }
