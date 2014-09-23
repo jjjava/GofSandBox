@@ -19,7 +19,7 @@ public class Client {
 
         // Create the ConnectionPool:
         JDBCConnectionPool pool = new JDBCConnectionPool(
-                "com.ibm.as400.access.AS400JDBCDriver", "jdbc:as400://clm00010","wsadm", "michelin");
+                "com.ibm.as400.access.AS400JDBCDriver", "jdbc:as400://xxxx","xxxx", "xxxx");
 
         // Get a connection:
         Connection con = pool.checkOut();

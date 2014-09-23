@@ -23,9 +23,9 @@ public class Client {
 
     public static void main(String[] args) {
         IJdbcPool<Connection> pool = new ConnectionPool();
-        pool.create(new As400Connection(DriversLibsNames.as400ClassName, "BRZ00052", "BADMDADO", "menta321"));
-        pool.create(new As400Connection(DriversLibsNames.as400ClassName, "BRZ00052", "BADMDADO", "menta321"));
-        pool.create(new As400Connection(DriversLibsNames.as400ClassName, "BRZ00052", "BADMDADO", "menta321"));
+        pool.create(new As400Connection(DriversLibsNames.as400ClassName, "xxxx", "xxx", "xxx"));
+        pool.create(new As400Connection(DriversLibsNames.as400ClassName, "xxx", "xxxx", "xxx"));
+        pool.create(new As400Connection(DriversLibsNames.as400ClassName, "xxx", "xxx", "xxxx"));
 
         System.out.println("Size:" + pool.getSize());
 
