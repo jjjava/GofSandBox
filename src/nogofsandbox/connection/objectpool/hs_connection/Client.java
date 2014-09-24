@@ -10,7 +10,7 @@ import java.util.Calendar;
 
 /**
  *
- * @author hudson.sales
+ * @author Hudson Schumaker
  */
 public class Client {
 

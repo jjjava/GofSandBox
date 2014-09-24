@@ -3,7 +3,7 @@ package nogofsandbox.connection.objectpool.hs_connection;
 
 /**
  *
- * @author hudson.sales
+ * @author Hudson Schumaker
  * @param <T>
  */
 public interface IJdbcPool<T> {

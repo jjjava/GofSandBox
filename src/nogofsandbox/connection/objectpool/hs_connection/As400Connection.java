@@ -6,7 +6,7 @@ import java.sql.SQLException;
 
 /**
  *
- * @author hudson.sales
+ * @author Hudson Schumaker
  */
 public class As400Connection extends JDBCConnection {
 
