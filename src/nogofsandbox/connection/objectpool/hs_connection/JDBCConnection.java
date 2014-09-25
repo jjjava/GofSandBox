@@ -4,7 +4,7 @@ import java.sql.Connection;
 
 /**
  *
- * @author hudson.sales
+ * @author Hudson Schumaker
  */
 public abstract class JDBCConnection {
 

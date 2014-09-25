@@ -1,6 +1,7 @@
 package nogofsandbox.connection.objectpool;
 
 import java.util.Enumeration;
+import java.util.HashMap;
 import java.util.Hashtable;
 
 /**
