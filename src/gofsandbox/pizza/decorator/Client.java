@@ -10,7 +10,7 @@ package gofsandbox.pizza.decorator;
  */
 public class Client {
     public static void main(String args[]){
-        Pizza pizza = new PizzaMuzarella(new MolhoTomate(new Pepperoni(new Catupiry(null))));
+        Pizza pizza = new Pepperoni(new Catupiry(new PizzaMozzarella(new MassaPizza())));
         
         System.out.println(pizza.getDescricao());
         System.out.println(pizza.getCusto());

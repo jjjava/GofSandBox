@@ -16,6 +16,16 @@ public abstract class PizzaDecorator implements Pizza {
         this.pizza = pizza;
     }
 
+    @Override
+    public String getDescricao() {
+        return pizza.getDescricao();
+    }
+
+    @Override
+    public double getCusto() {
+        return pizza.getCusto();
+    }
+
     public Pizza getPizza() {
         return pizza;
     }

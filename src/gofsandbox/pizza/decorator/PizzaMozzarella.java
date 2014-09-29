@@ -4,9 +4,9 @@ package gofsandbox.pizza.decorator;
  *
  * @author Hudson
  */
-public class PizzaMuzarella extends PizzaDecorator {
+public class PizzaMozzarella extends PizzaDecorator {
 
-    public PizzaMuzarella(Pizza pizza) {
+    public PizzaMozzarella(Pizza pizza) {
         super(pizza);
     }
 
