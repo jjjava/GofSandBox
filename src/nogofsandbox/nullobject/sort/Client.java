@@ -13,18 +13,48 @@ import java.util.Random;
 public class Client {
 
     public static void main(String args[]) {
-        List<Integer> list = new ArrayList<>();
+        final List<Integer> list = new ArrayList<>();
+        final List<Integer> list2 = new ArrayList<>();
+        final List<Integer> list3 = new ArrayList<>();
         Random rnd = new Random();
 
-        for (int k = 0; k < 1000000; k++) {
+        for (int k = 0; k < 10000000; k++) {
             list.add(rnd.nextInt());
+            list2.add(rnd.nextInt());
+            list3.add(rnd.nextInt());
         }
 
-        SortList ordernar = FactorySort.getInstance().getSort("nogofsandbox.nullobject.sort.HsQuickSort");
-        ordernar.sort(list);
+//        for (int t : list) {
+//            System.out.println(t);
+//        }
+        new Thread(
+                new Runnable() {
+                    @Override
+                    public void run() {
+                        SortList ordernar = FactorySort.getInstance().getSort("nogofsandbox.nullobject.sort.HsQuickSort");
+                        ordernar.sort(list);
+                    }
+                }
+        ).start();
 
-        for (int t : list) {
-            System.out.println(t);
-        }
+        new Thread(
+                new Runnable() {
+                    @Override
+                    public void run() {
+                        SortList ordernar = FactorySort.getInstance().getSort("nogofsandbox.nullobject.sort.HsQuickSort");
+                        ordernar.sort(list2);
+                    }
+                }
+        ).start();
+
+//        new Thread(
+//                new Runnable() {
+//                    @Override
+//                    public void run() {
+//                        SortList ordernar = FactorySort.getInstance().getSort("nogofsandbox.nullobject.sort.HsQuickSort");
+//                        ordernar.sort(list3);
+//                    }
+//                }
+//        ).start();
     }
 }
