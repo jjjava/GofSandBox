@@ -9,8 +9,9 @@ import java.io.File;
  */
 public abstract class Core {
 
-    private File files[];
-    private String path;
+    File files[];
+    String path;
+    int count;
     
     public Core(File files[], String path){
         this.files = files;
@@ -21,5 +22,13 @@ public abstract class Core {
     }
 
     public void detach(GfxObserver observer) {
+    }
+
+    public int getCount() {
+        return count;
+    }
+
+    public void setCount(int count) {
+        this.count = count;
     }
 }
