@@ -21,6 +21,7 @@ public class Upload extends Core implements Runnable {
 
     public void start() {
         Thread t = new Thread(this);
+        t.setPriority(Thread.MAX_PRIORITY);
         t.start();
     }
 
