@@ -70,7 +70,7 @@ public class FrMain extends JFrame implements GfxObserver {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        File files = new File("C:\\Temp\\teste");
+        File files = new File("/Library");
         jProgressBar1.setValue(0);
         jProgressBar1.setMaximum(files.listFiles().length);
 
